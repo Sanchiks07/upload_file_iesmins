@@ -8,27 +8,35 @@
 </head>
 <body>
 
-
+    <!-- Navigation Menu -->
     <nav>
         <ul>
             <li><a href="#" id="uploadFileBtn">Upload File</a></li>
-            <li><a href="#" id="deleteFileBtn">Delete File</a></li>
+            <li><a href="#" id="displayFilesBtn">Display Files</a></li>
+
         </ul>
     </nav>
 
-
+    <!-- Upload File Section -->
     <section id="uploadFileSection">
         <h2>Upload File</h2>
         <form id="fileUploadForm" action="upload.php" method="POST" enctype="multipart/form-data">
             <div class="input-group">
                 <input type="file" id="fileInput" name="uploadedFile" required>
                 <label for="fileInput" id="fileLabel">No file selected</label>
+                <button type="submit" class="breathing-button">Upload</button>
             </div>
-            <button type="submit" class="breathing-button">Upload</button>
         </form>
     </section>
 
+ <!-- Display Files Section -->
+<section id="displayFilesSection" style="display: none;">
+    <h2>Uploaded Files</h2>
+    <div id="filesList" class="files-grid"></div>
+</section>
 
+
+    <!-- Delete File Section -->
     <section id="deleteFileSection" style="display: none;">
         <h2>Delete File</h2>
         <p>Delete functionality coming soon...</p>
@@ -46,6 +54,5 @@
             }
         });
     </script>
-    
 </body>
 </html>

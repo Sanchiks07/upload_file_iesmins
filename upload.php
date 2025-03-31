@@ -24,7 +24,7 @@ if (isset($_FILES["uploadedFile"])) {
 
     if ($fileError === 0) {
         if (move_uploaded_file($fileTempName, $filePath)) { //temp fialu pārceļam uz īsto lokāciju
-            $successMessage .= "File successfully uploaded to folder.\n";
+            $successMessage .= "✅ File successfully uploaded to folder.\n";
 
             $sql = "INSERT INTO upload_paths (file_name, file_path) VALUES (:fileName, :filePath)";
             $stmt = $conn->prepare($sql);
@@ -36,7 +36,7 @@ if (isset($_FILES["uploadedFile"])) {
                 ]);
 
                 if ($stmt->rowCount() > 0) { //pārbauda vai datubāzē dati tika ievietoti veiksmīgi
-                    $successMessage .= "File path saved in the database successfully!";
+                    $successMessage .= "✅ File path saved in the database successfully!";
                 } else {
                     $successMessage .= "Failed to save file path in the database.";
                 }
